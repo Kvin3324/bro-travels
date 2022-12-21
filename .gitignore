@@ -34,3 +34,4 @@ yarn.lock
 
 components.d.ts
 auto-imports.d.ts
+.vercel
