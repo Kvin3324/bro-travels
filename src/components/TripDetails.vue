@@ -10,12 +10,19 @@
       <h3 class="trip__content-title" v-text="'Description'" />
       <p>{{ trip.content }}</p>
     </div>
+    <div class="trip__period">
+      <h3 class="trip__content-title" v-text="'Période:'" />
+      <p>{{ trip.period.from }}</p>
+      <span>-</span>
+      <p>{{ trip.period.to }}</p>
+    </div>
     <div class="trip__flights">
       <div class="trip__flights-from">
         <img :src="trip.flight.from.airportIcon" alt="" />
         <h4 v-text="'Départ:'" />
         <p v-text="trip.flight.from.airportName" />
       </div>
+      <span>-</span>
       <div class="trip__flights-from">
         <img :src="trip.flight.from.airportIcon" alt="" />
         <h4 v-text="'Arrivée:'" />
@@ -41,6 +48,10 @@ export default {
           name: 'New-York',
           banner: '/assets/ny.jpg',
           content: "C'est l'heure de s'envoler pour New York, je sais que vous en rêviez donc voici quelques infos !",
+          period: {
+            from: '29/06/2023',
+            to: '14/07/2023',
+          },
           flight: {
             from: {
               airportName: 'Bordeaux',
@@ -60,6 +71,10 @@ export default {
           name: 'Ibiza',
           banner: '/assets/ibiza.jpg',
           content: "C'est l'heure de s'envoler pour Ibiza, je sais que vous en rêviez donc voici quelques infos !",
+          period: {
+            from: '14/07/2023',
+            to: '21/07/2023',
+          },
           flight: {
             from: {
               airportName: 'Bordeaux',
@@ -106,9 +121,16 @@ export default {
     }
   }
 
-  &__flights {
+  &__period {
+    align-items: center;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__flights {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
 
     &-from,
     &-to {
