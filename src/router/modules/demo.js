@@ -2,11 +2,16 @@ export default [
   {
     path: '/',
     name: 'home',
-    component: () => import('@/views/HomeView.vue'),
+    component: () => import('@/components/Home.vue'),
   },
   {
-    path: '/about',
-    name: 'about',
-    component: () => import('@/views/AboutView.vue'),
+    path: '/trips-list',
+    name: 'trips-list',
+    component: () => import('@/components/TripsList.vue'),
+  },
+  {
+    path: '/trip-details/:tripName',
+    name: 'trip-details',
+    component: () => import('@/components/TripDetails.vue'),
   },
 ];

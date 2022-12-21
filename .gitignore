@@ -13,6 +13,10 @@ dist
 dist-ssr
 *.local
 
+.github
+.husky
+.vscode
+
 /cypress/videos/
 /cypress/screenshots/
 

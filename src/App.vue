@@ -1,30 +1,31 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue';
+import Home from './components/Home.vue';
+import TripsList from '@/components/TripsList.vue';
+import TripDetails from '@/components/TripDetails.vue';
 </script>
 
 <template>
   <div id="app">
     <header>
-      <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
       <div class="wrapper">
-        <HelloWorld msg="You did it!" />
-
-        <nav>
+        <Home v-if="$route.name === 'home'" />
+        <TripsList v-if="$route.name === 'trips-list'" />
+        <TripDetails v-if="$route.name === 'trip-details'" />
+        <!-- <nav>
           <router-link to="/">Home</router-link>
           <router-link to="/about">About</router-link>
-        </nav>
+        </nav> -->
       </div>
     </header>
 
-    <router-view />
+    <!-- <router-view /> -->
   </div>
 </template>
 
 <style scoped>
 header {
-  line-height: 1.5;
   max-height: 100vh;
+  line-height: 1.5;
 }
 
 .logo {
@@ -33,8 +34,8 @@ header {
 }
 
 nav {
-  margin-top: 2rem;
   width: 100%;
+  margin-top: 2rem;
   font-size: 12px;
   text-align: center;
 }
@@ -70,14 +71,14 @@ nav a:first-of-type {
 
   header .wrapper {
     display: flex;
-    place-items: flex-start;
     flex-wrap: wrap;
+    place-items: flex-start;
   }
 
   nav {
+    padding: 1rem 0;
     margin-top: 1rem;
     margin-left: -1rem;
-    padding: 1rem 0;
     font-size: 1rem;
     text-align: left;
   }
