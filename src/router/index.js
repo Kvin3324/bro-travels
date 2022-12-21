@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import { createWebHashHistory } from 'vue-router';
 
 import demoRouters from './modules/demo';
 
@@ -9,8 +8,7 @@ Vue.use(VueRouter);
 const routes = [...demoRouters];
 
 const router = new VueRouter({
-  mode: 'history',
-  history: createWebHashHistory(),
+  mode: 'hash',
   base: import.meta.env.BASE_URL,
   routes,
   scrollBehavior() {
