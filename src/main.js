@@ -5,7 +5,7 @@ import store from './store';
 import router from './router';
 
 import '@/style/index.less';
-import '@/assets/main.css';
+import '/public/assets/main.css';
 
 new Vue({
   router,
