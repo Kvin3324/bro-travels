@@ -39,40 +39,40 @@ export default {
       tripDetail: [
         {
           name: 'New-York',
-          banner: '../../public/assets/ny.jpg',
+          banner: '/assets/ny.jpg',
           content: "C'est l'heure de s'envoler pour New York, je sais que vous en rêviez donc voici quelques infos !",
           flight: {
             from: {
               airportName: 'Bordeaux',
-              airportIcon: '../../public/assets/plane_departure.svg',
+              airportIcon: '/assets/plane_departure.svg',
             },
             to: {
               airportName: 'New York (JFK)',
-              airportIcon: '../../public/assets/plane_arrival.svg',
+              airportIcon: '/assets/plane_arrival.svg',
             },
           },
           detailsImg: {
-            price: '../../public/assets/trip_ny_price.png',
-            flights: '../../public/assets/trip_ny_flights.png',
+            price: '/assets/trip_ny_price.png',
+            flights: '/assets/trip_ny_flights.png',
           },
         },
         {
           name: 'Ibiza',
-          banner: '../../public/assets/ibiza.jpg',
+          banner: '/assets/ibiza.jpg',
           content: "C'est l'heure de s'envoler pour Ibiza, je sais que vous en rêviez donc voici quelques infos !",
           flight: {
             from: {
               airportName: 'Bordeaux',
-              airportIcon: '../../public/assets/plane_departure.svg',
+              airportIcon: '/assets/plane_departure.svg',
             },
             to: {
               airportName: 'Ibiza',
-              airportIcon: '../../public/assets/plane_arrival.svg',
+              airportIcon: '/assets/plane_arrival.svg',
             },
           },
           detailsImg: {
-            price: '../../public/assets/ibiza_price.png',
-            flights: '../../public/assets/ibiza_flights.png',
+            price: '/assets/ibiza_price.png',
+            flights: '/assets/ibiza_flights.png',
           },
         },
       ],
