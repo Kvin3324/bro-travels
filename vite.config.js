@@ -8,6 +8,7 @@ export default ({ mode }) => {
   return defineConfig({
     base: VITE_BASE_URL,
     plugins: [vue2()],
+    assetsInclude: ['**/*.gltf', '**/*.png', '**/*.svg'],
     resolve: {
       alias: {
         '@': resolve(__dirname, 'src'),
