@@ -130,7 +130,7 @@ export default {
   &__flights {
     align-items: center;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 
     &-from,
     &-to {
