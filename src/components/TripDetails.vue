@@ -90,6 +90,30 @@ export default {
             flights: '/assets/ibiza_flights.png',
           },
         },
+        {
+          name: 'Thaïlande',
+          banner: '/assets/thailande_unsplash.jpg',
+          content:
+            "C'est l'heure de s'envoler pour la Thaïlande, je sais que vous en rêviez donc voici quelques infos !",
+          period: {
+            from: '01/12/2023',
+            to: '15/12/2023',
+          },
+          flight: {
+            from: {
+              airportName: 'Bordeaux',
+              airportIcon: '/assets/plane_departure.svg',
+            },
+            to: {
+              airportName: 'Bangkok - Thaïlande',
+              airportIcon: '/assets/plane_arrival.svg',
+            },
+          },
+          detailsImg: {
+            price: '/assets/thailande.png',
+            flights: '',
+          },
+        },
       ],
     };
   },

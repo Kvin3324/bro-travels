@@ -38,10 +38,13 @@ export default {
     return {
       tripsList: [
         {
+          name: 'Ibiza',
+        },
+        {
           name: 'New-York',
         },
         {
-          name: 'Ibiza',
+          name: 'Thaïlande',
         },
       ],
     };
