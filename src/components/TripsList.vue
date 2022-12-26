@@ -24,18 +24,36 @@
       </ul>
     </div>
     <div class="participants">
-      <h4 v-text="'Nombre de participants:'" />
-      <p v-text="'6'"></p>
+      <h4 v-text="'Participants:'" />
+      <button @click="displayModal">Liste des bg</button>
     </div>
+    <Modal v-show="showModal" :participantsArr="participants" @close-modal="displayModal" />
   </div>
 </template>
 
 <script>
+import Modal from './Modal.vue';
+
 export default {
   name: 'TripPage',
+  components: { Modal },
 
   data() {
     return {
+      showModal: false,
+      participants: [
+        {
+          number: 6,
+          listNames: [
+            'Arthur Wroblewski',
+            'Kévin Joya',
+            'Mathieu Jaen',
+            'Maxime Tabouy',
+            'Pierre Lavandier',
+            'Quentin De la Barbelais',
+          ],
+        },
+      ],
       tripsList: [
         {
           name: 'Ibiza',
@@ -55,6 +73,12 @@ export default {
       return `Bienvenue à toi, jeune ${localStorage.getItem('myPseudo')}`;
     },
   },
+
+  methods: {
+    displayModal() {
+      this.showModal = !this.showModal;
+    },
+  },
 };
 </script>
 
@@ -68,8 +92,17 @@ export default {
 }
 
 .participants {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
+  flex-direction: column;
+
+  button {
+    background-color: #28a745;
+    border-radius: 5%;
+    border-color: #28a745;
+    color: white;
+    padding: 0.375rem 0.75rem;
+  }
 
   p {
     margin: 0;
