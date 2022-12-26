@@ -27,6 +27,22 @@
       <h4 v-text="'Nombre de participants:'" />
       <p v-text="'6'"></p>
     </div>
+    <div class="travels__suggestions">
+      <div class="travels__suggestions--title">
+        <h3 v-text="'Proposition(s) de destination(s):'"></h3>
+        <p>
+          Faites moi vos propositions que je puisse regarder et trouver quelques infos rapides sur les destinations. Une
+          fois que vous aurez cliqué sur le bouton "Envoyer", je recevrais un mail avec vos destinations.
+        </p>
+      </div>
+      <div class="travels__suggestions--content">
+        <label for="destination">Destination:</label>
+        <input name="destination" placeholder="Amsterdam" type="text" />
+        <button>
+          <a :href="`mailto:${emailTo}`"> Envoyer </a>
+        </button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -36,6 +52,7 @@ export default {
 
   data() {
     return {
+      emailTo: 'kevin.joya@outlook.com',
       tripsList: [
         {
           name: 'Ibiza',
@@ -74,6 +91,38 @@ export default {
   p {
     margin: 0;
     margin-left: 10px;
+  }
+}
+
+.travels__suggestions {
+  display: flex;
+  flex-direction: column;
+
+  p {
+    margin: 0;
+  }
+
+  &--content {
+    margin-top: 25%;
+
+    button {
+      background-color: #28a745;
+      border-radius: 5%;
+      border-color: #28a745;
+      margin-bottom: 10%;
+      padding: 0.375rem 0.75rem;
+      a {
+        color: white;
+      }
+    }
+
+    input {
+      margin-bottom: 5%;
+      margin-top: 5%;
+      margin-right: 10%;
+      padding: 10px;
+      width: 70%;
+    }
   }
 }
 </style>
