@@ -8,6 +8,7 @@
       <div class="about">
         <input id="pseudo" v-model="nickname" placeholder="Enter your name" type="text" />
         <button @click="storePseudo(nickname)">Let's gooo</button>
+        <p v-if="inputNameError" class="input-error">Non, dis-moi qui tu es avant, sinon ce n'est pas drôle...</p>
       </div>
     </div>
   </div>
@@ -19,6 +20,7 @@ export default {
 
   data() {
     return {
+      inputNameError: false,
       nickname: null,
     };
   },
@@ -32,6 +34,10 @@ export default {
       if (value) {
         localStorage.setItem('myPseudo', value);
         this.$router.push('/trips-list');
+      }
+
+      if (!value) {
+        this.inputNameError = true;
       }
     },
   },
@@ -47,7 +53,6 @@ export default {
 
   &-content {
     .about {
-      text-align: center;
       input {
         border: none;
         border-bottom: 1px solid black;
@@ -55,6 +60,12 @@ export default {
         margin-right: 10%;
         padding: 10px;
         width: 40%;
+
+        &:active,
+        &:focus,
+        &:focus-visible {
+          border: 1px solid #28a745;
+        }
       }
 
       button {
@@ -63,6 +74,11 @@ export default {
         border-color: #28a745;
         color: white;
         padding: 0.375rem 0.75rem;
+      }
+
+      .input-error {
+        color: red;
+        font-size: 0.8em;
       }
     }
   }
