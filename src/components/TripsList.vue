@@ -9,12 +9,11 @@
         Ce que je vous propose, c'est une liste de voyages avec des villes, pays qu'on a déjà évoqués. Bien entendu,
         vous pouvez en proposer d'autres afin qu'on se mette d'accord.
       </p>
-      <p>
-        Néanmoins, voici quelques voyages dont il y a quelques détails, détails que j'ai prit le soin d'étudier avant
-        tout. Ceux-ci sont encore très sommaires mais seront à creuse une fois la destination choisie.
-      </p>
+      <p>Néanmoins, voici une liste de quelques voyages avec des détails que j'ai prit le soin d'étudier avant tout.</p>
+      <p>Ceux-ci sont encore <b>très sommaires</b> mais seront à creuser une fois la destination choisie.</p>
     </div>
     <div class="trips__content-list">
+      <h4>Liste des voyages envisagées:</h4>
       <ul v-for="(trip, index) in tripsList" :key="index">
         <li>
           <router-link :to="{ name: 'trip-details', params: { tripName: trip.name } }">
